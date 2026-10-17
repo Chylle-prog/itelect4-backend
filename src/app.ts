@@ -13,7 +13,12 @@ import { userRouter } from './routes/users.js'
 
 const app = express()
 
-app.use(cors())
+const ALLOWED_ORIGINS = (process.env.CORS_ORIGIN ?? '')
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter((origin) => origin !== '')
+
+app.use(cors(ALLOWED_ORIGINS.length > 0 ? { origin: ALLOWED_ORIGINS } : {}))
 app.use(express.json())
 
 app.use(async (_req: Request, _res: Response, next: NextFunction) => {

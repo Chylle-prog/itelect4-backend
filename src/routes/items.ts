@@ -25,18 +25,15 @@ function pickItemFields(body: Record<string, unknown>): Partial<NewLostFoundItem
   return fields
 }
 
-itemRouter.get('/', async (req: Request, res: Response) => {
-  const items = await LostFoundItemModel.find({ postedByUserId: req.userId }).sort({
+itemRouter.get('/', async (_req: Request, res: Response) => {
+  const items = await LostFoundItemModel.find().sort({
     createdAt: -1,
   })
   res.json(items)
 })
 
 itemRouter.get('/:id', async (req: Request<IdParam>, res: Response) => {
-  const item = await LostFoundItemModel.findOne({
-    _id: req.params.id,
-    postedByUserId: req.userId,
-  })
+  const item = await LostFoundItemModel.findById(req.params.id)
   if (!item) {
     res.status(404).json({ message: 'No item with that id' })
     return
