@@ -5,7 +5,7 @@ Node.js, Express, TypeScript, MongoDB, and JWT API for the GT4 Lost & Found appl
 ## Live deployment
 
 - Backend: https://itelect4-backend-ebon.vercel.app
-
+ 
 ## Run locally
 
 1. Install dependencies with `npm install`.
