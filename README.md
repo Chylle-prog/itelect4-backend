@@ -4,10 +4,7 @@ Node.js, Express, TypeScript, MongoDB, and JWT API for the GT4 Lost & Found appl
 
 ## Live deployment
 
-- Frontend: https://itelect4-project-it-4-b-magbuhat.vercel.app/
-- Backend health: https://itelect4-project-it-4-b-magbuhat.vercel.app/api/health
-
-The frontend and API currently share one Vercel deployment. The API is exposed under `/api` on the same domain.
+- Backend: https://itelect4-backend-ebon.vercel.app
 
 ## Run locally
 
