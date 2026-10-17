@@ -1,9 +1,8 @@
 {
-  "framework": "express",
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "src/app.ts"
+      "destination": "/api"
     }
   ]
 }
