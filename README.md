@@ -1,4 +1,4 @@
-# ITElect4 Lost & Found Backend
+ï»¿# ITElect4 Lost & Found Backend
 
 Node.js, Express, TypeScript, MongoDB, JWT, Zod, and Gemini AI (`@google/genai`) for the GT5 Lost & Found application.
 
@@ -36,17 +36,17 @@ The items and claims collections use MongoDB ObjectIds. Demo users, items, and c
 
 ## AI route (`POST /api/ai`)
 
-Added in Session 11. Accepts a JSON body `{ "prompt": "<20–2000 chars>" }` with a valid Bearer token and returns a structured review of the submitted lost-and-found report.
+Added in Session 11. Accepts a JSON body `{ "prompt": "<20ï¿½2000 chars>" }` with a valid Bearer token and returns a structured review of the submitted lost-and-found report.
 
-**Request schema** (`src/schemas/review.ts`): the `prompt` field is trimmed and must be 20–2000 characters.
+**Request schema** (`src/schemas/review.ts`): the `prompt` field is trimmed and must be 20ï¿½2000 characters.
 
-**Reply schema** — four fields Gemini is required to fill in:
+**Reply schema** ï¿½ four fields Gemini is required to fill in:
 
 | Field | Type | Description |
 | --- | --- | --- |
 | `summary` | `string` | One sentence restating what the student built. |
-| `strengths` | `string[]` (1–3 items) | What the description shows was done well. |
-| `improvements` | `string[]` (1–3 items) | Concrete things to fix or add before submitting. |
+| `strengths` | `string[]` (1ï¿½3 items) | What the description shows was done well. |
+| `improvements` | `string[]` (1ï¿½3 items) | Concrete things to fix or add before submitting. |
 | `readiness` | `"ready" \| "almost" \| "not-yet"` | How close the project is to being submitted. |
 
 The same Zod schema (`reviewSchema`) is used three ways: as the TypeScript type via `z.infer`, as the JSON Schema sent to Gemini via `z.toJSONSchema`, and as the runtime check on Gemini's reply via `safeParse`.
@@ -71,6 +71,6 @@ The route is protected by `requireAuth` and an `express-rate-limit` limiter keye
 
 ## Deploying to Vercel
 
-The backend is deployed as a serverless function via `api/index.ts` and `vercel.json`. After adding `GEMINI_API_KEY` in the Vercel project's **Settings ? Environment Variables**, open **Deployments**, click the three dots on the latest deployment, and choose **Redeploy** — a new variable is only read when the app starts.
+The backend is deployed as a serverless function via `api/index.ts` and `vercel.json`. After adding `GEMINI_API_KEY` in the Vercel project's **Settings > Environment Variables**, open **Deployments**, click the three dots on the latest deployment, and choose **Redeploy** ï¿½ a new variable is only read when the app starts.
 
 Verify with Postman: `POST /api/ai` with a valid Bearer token and `{ "prompt": "..." }`. A 200 returns all four fields. A 500 means the variable is missing; a 502 means the key is wrong.
