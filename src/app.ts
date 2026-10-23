@@ -7,6 +7,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import { connectDB } from './config/db.js'
 import { claimRouter } from './routes/claims.js'
+import { aiRouter } from './routes/ai.js'
 import { authRouter } from './routes/auth.js'
 import { itemRouter } from './routes/items.js'
 import { userRouter } from './routes/users.js'
@@ -48,6 +49,7 @@ app.use('/users', userRouter)
 app.use('/api/items', itemRouter)
 app.use('/items', itemRouter)
 app.use('/api/claims', claimRouter)
+app.use('/api/ai', aiRouter)
 app.use('/claims', claimRouter)
 
 app.use((req: Request, res: Response) => {
