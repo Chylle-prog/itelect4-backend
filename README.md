@@ -4,6 +4,7 @@ Node.js, Express, TypeScript, MongoDB, JWT, Zod, and Gemini AI (`@google/genai`)
 
 ## Live deployment
 
+- Frontend: https://itelect4-project-psi.vercel.app
 - Backend: https://itelect4-backend-ebon.vercel.app
 
 ## Run locally
