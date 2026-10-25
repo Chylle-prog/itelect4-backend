@@ -1,6 +1,6 @@
 import type { Review } from '../schemas/review.js'
 
-export const MODEL = 'gemini-flash-latest'
+export const MODEL = 'gemini-flash-lite-latest'
 
 export const SYSTEM_PROMPT = `
 You review lost-and-found item reports for a school app. A student describes
