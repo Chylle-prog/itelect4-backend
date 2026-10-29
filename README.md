@@ -1,6 +1,24 @@
-﻿# ITElect4 Lost & Found Backend
+# ITElect4 Lost & Found Backend
 
-Node.js, Express, TypeScript, MongoDB, JWT, Zod, and Gemini AI (`@google/genai`) for the GT5 Lost & Found application.
+[![CI](https://github.com/Chylle-prog/itelect4-backend/actions/workflows/ci.yml/badge.svg)](https://github.com/Chylle-prog/itelect4-backend/actions/workflows/ci.yml)
+
+Node.js, Express, TypeScript, MongoDB, JWT, Zod, and Gemini AI (`@google/genai`) for the GT6 Lost & Found application.
+
+- **Live API:** https://itelect4-backend-ebon.vercel.app/api/health
+- **Frontend repo:** https://github.com/Chylle-prog/itelect4-project
+
+## Architecture
+
+```mermaid
+flowchart LR
+  fe["itelect4-project<br/>React + Vite on Vercel"]
+  be["itelect4-backend<br/>Express on Vercel"]
+  db[("MongoDB Atlas")]
+  ai["Gemini API"]
+  fe -- "fetch + Bearer token" --> be
+  be -- "Mongoose" --> db
+  be -- "GEMINI_API_KEY" --> ai
+```
 
 ## Live deployment
 
