@@ -93,3 +93,7 @@ The route is protected by `requireAuth` and an `express-rate-limit` limiter keye
 The backend is deployed as a serverless function via `api/index.ts` and `vercel.json`. After adding `GEMINI_API_KEY` in the Vercel project's **Settings > Environment Variables**, open **Deployments**, click the three dots on the latest deployment, and choose **Redeploy** � a new variable is only read when the app starts.
 
 Verify with Postman: `POST /api/ai` with a valid Bearer token and `{ "prompt": "..." }`. A 200 returns all four fields. A 500 means the variable is missing; a 502 means the key is wrong.
+
+## AI-Use Disclosure
+
+AI assistants were utilized during development for code syntax verification, lockfile debugging, and structuring test suites. All application features, schema design, and integrations were reviewed and tested by the author in adherence to course guidelines.
